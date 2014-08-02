@@ -19,6 +19,9 @@ namespace Mariposario{
             }
             get { return precio; }
         }
+
+        public DateTime FechaInicio { set; get; }  
+
         public List<MariposaDeColeccion> Mariposas { set; get; }
         public Coleccionista Dueño { set; get; }
         #endregion
@@ -28,9 +31,9 @@ namespace Mariposario{
 
         public Coleccion(String id) { this.Identificador = id; }
 
-        public Coleccion(String id, String nombre, Decimal precio, List<MariposaDeColeccion> mariposas, Coleccionista dueño){
+        public Coleccion(String id, String nombre, Decimal precio, DateTime fecha, List<MariposaDeColeccion> mariposas, Coleccionista dueño){
             Identificador=id; Nombre=nombre; Precio=precio;
-            Mariposas=mariposas; Dueño=dueño;
+            Mariposas=mariposas; Dueño=dueño; FechaInicio=fecha;
             
         }
         #endregion
