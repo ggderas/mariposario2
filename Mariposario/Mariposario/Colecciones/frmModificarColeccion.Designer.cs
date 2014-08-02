@@ -1,5 +1,5 @@
 ﻿namespace Mariposario {
-    partial class formularioAgregarColeccion {
+    partial class frmModificarColeccion {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -62,10 +62,10 @@
             this.groupBox1.Controls.Add(this.lblEspecie);
             this.groupBox1.Controls.Add(this.tbIDColeccion);
             this.groupBox1.Controls.Add(this.lblID);
-            this.groupBox1.Location = new System.Drawing.Point(4, 12);
+            this.groupBox1.Location = new System.Drawing.Point(6, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(575, 495);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnAgregar
@@ -207,7 +207,7 @@
             // 
             this.cmbPropietario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPropietario.FormattingEnabled = true;
-            this.cmbPropietario.Location = new System.Drawing.Point(134, 124);
+            this.cmbPropietario.Location = new System.Drawing.Point(134, 122);
             this.cmbPropietario.Name = "cmbPropietario";
             this.cmbPropietario.Size = new System.Drawing.Size(200, 21);
             this.cmbPropietario.TabIndex = 4;
@@ -223,6 +223,7 @@
             // 
             // tbIDColeccion
             // 
+            this.tbIDColeccion.Enabled = false;
             this.tbIDColeccion.Location = new System.Drawing.Point(134, 29);
             this.tbIDColeccion.Name = "tbIDColeccion";
             this.tbIDColeccion.Size = new System.Drawing.Size(200, 20);
@@ -241,16 +242,14 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // formularioAgregarColeccion
+            // frmModificarColeccion
             // 
-            this.AcceptButton = this.btnAgregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(587, 519);
             this.Controls.Add(this.groupBox1);
-            this.Name = "formularioAgregarColeccion";
-            this.Text = "Mariposario - Agregar Colección";
+            this.Name = "frmModificarColeccion";
+            this.Text = "Colecciones - Modificar";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBoxTipo.ResumeLayout(false);
@@ -264,6 +263,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.GroupBox groupBoxTipo;
+        private System.Windows.Forms.Label lblEliminarMariposa;
+        private System.Windows.Forms.Label lblAgregarMariposa;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox lbMariposasEnColeccion;
+        private System.Windows.Forms.ListBox lbMariposas;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericPrecio;
@@ -272,15 +280,6 @@
         private System.Windows.Forms.Label lblEspecie;
         private System.Windows.Forms.TextBox tbIDColeccion;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.GroupBox groupBoxTipo;
-        private System.Windows.Forms.ListBox lbMariposas;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lbMariposasEnColeccion;
-        private System.Windows.Forms.Label lblAgregarMariposa;
-        private System.Windows.Forms.Label lblEliminarMariposa;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

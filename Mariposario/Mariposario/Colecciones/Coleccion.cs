@@ -30,8 +30,8 @@ namespace Mariposario{
 
         public Coleccion(String id, String nombre, Decimal precio, List<MariposaDeColeccion> mariposas, Coleccionista dueño){
             Identificador=id; Nombre=nombre; Precio=precio;
-            Mariposas=mariposas; 
-            Dueño=dueño;
+            Mariposas=mariposas; Dueño=dueño;
+            
         }
         #endregion
 

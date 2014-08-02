@@ -100,7 +100,9 @@ namespace Mariposario
             this.zonas_geograficas = this.conexion.obtenerZonasGeografica();
             this.familiasNaturales = this.conexion.obtenerFamiliaNatural();
             this.coleccionistas = this.conexion.obtenerColeccionistas();
-            this.colecciones = this.conexion.obtenerColecciones();
+            //AQUI UN CAMBIO: conexion.obtenerColecciones recibe la lista de mariposas.
+            //this.colecciones = this.conexion.obtenerColecciones();
+            this.colecciones = this.conexion.obtenerColecciones(this.mariposas);
             this.biologos = this.conexion.obtenerBiologos();
             this.especies = this.conexion.obtenerEspecie();
             this.generos = this.conexion.obtenerGeneros();
@@ -151,7 +153,13 @@ namespace Mariposario
 
         private void btnColeccionistas_Click(object sender, EventArgs e)
         {
-
+            //formularioColecciones f = new formularioColecciones(this.colecciones, this.biologos, this.coleccionistas, this.mariposasObservacion, this.mariposasColeccion, this.conexion);
+            //f.ShowDialog();
+            //this.colecciones=f.colecciones;
+            //this.biologos=f.personas;
+            //this.coleccionistas = f.coleccionistas;
+            //this.mariposasObservacion = f.mariposas;
+            //this.mariposasColeccion = f.mariposasColeccion;
         }
         #endregion
 

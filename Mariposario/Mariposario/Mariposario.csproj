@@ -94,6 +94,18 @@
     <Compile Include="Colecciones\formularioColecciones.Designer.cs">
       <DependentUpon>formularioColecciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colecciones\frmAñadirPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colecciones\frmAñadirPrecio.Designer.cs">
+      <DependentUpon>frmAñadirPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colecciones\frmModificarColeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colecciones\frmModificarColeccion.Designer.cs">
+      <DependentUpon>frmModificarColeccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Coleccionista.cs" />
     <Compile Include="Conexion-Carlos.cs" />
     <Compile Include="Conexion-Carolina.cs" />
@@ -231,6 +243,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Colecciones\formularioColecciones.resx">
       <DependentUpon>formularioColecciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colecciones\frmAñadirPrecio.resx">
+      <DependentUpon>frmAñadirPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colecciones\frmModificarColeccion.resx">
+      <DependentUpon>frmModificarColeccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularioActualizarMariposa.resx">
       <DependentUpon>formularioActualizarMariposa.cs</DependentUpon>

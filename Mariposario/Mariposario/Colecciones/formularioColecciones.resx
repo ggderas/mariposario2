@@ -118,28 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAANkE3LLaAgAAAAZiS0dEAP8A
-        /wD/oL2nkwAAAAl2cEFnAAAAEAAAABAAXMatwwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAwOS0wOS0xM1Qx
-        NjoyMTozMSswMjowMDf5PT8AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMDktMDktMTNUMTY6MjE6MzErMDI6
-        MDBGpIWDAAADB0lEQVQ4T3WTa0iTURzGX6kvBVGI9W2ZfREK6kMYVEQRfQqMQLKCzDTdRVtWeyu31rac
-        WrYmriwNUSuL7hBlrYu0DIumW+5t7zZ3ce+WNS+bs9JyCuvpbDVcYH94OOdwzvP7PxzOoWJVfEhGCQ7L
-        U/KFxxbv5UuWJytPIMkoLC1fuKvgEMUvOxk//08VlxFzmSK2mXtEVmWSq2u9yZJVaLlSWvWo6KA0M9aI
-        L5b9df6tGJV0To2ZjSYGofAYQqNhhMn4dYzMgyFcvXkPoqOKzlkhJDpFovJOqmu5YCiMWE1OR9HlHscl
-        wwguvRpC69Ne6K60oVQyCyQGyEsASLfA2BSKrnHYpHFA0OaLz9dVs8jRvseZ+jaUxCDiJEgCIFdrOf+X
-        YRQTQ0GrF56RKYxNAt8jgGs4gp2NHuyuM6Kh5RZKaeVjcrEL4peaACiqarn7XV5sJp3tgZ9gR6JghqJw
-        BKP4/P0XPg78wIazduiNHsjV57l9AnrpDEAg4SmrtJziDgv+tX7YhybxxBWBgZtCl38a7z5NYyAcQW6j
-        Gxfb+0DO+vIEdHoSgOYpK7Wc8rYVBc1udHPf0GQax01mAnfZCTywTaBvcBw5l52ob7dDUan1kQQzALLg
-        nSKx7r52YH21FQZ2EK09IdS8GUXt2zAesWEY3UGsVlnRpLfhlFoTBwiSAdLTGs5qd4Lf4kC2zga9+RM6
-        2AAMtgA6iW6Yw9jR5MMqeTf20Bd8JWLJ0hmAkOaVqzQca7PD6vRB0MwiS81gu45Fdh2LlQoG2xq8kD4P
-        YsvFfqSVdIYW85+tzxA+TACOEcA5zsJYwXn74fb045nRhfonDjTqHWh92YesCgs26jwofBDAWq0bc4Wm
-        p9QB46L4U95fcjy1rFxtatd34EMvQ2SBxWIBwzBxfSS69cKMFdL3WKNxYmujF/PFZhdVaMwgABklPPzn
-        MxGI+YSyxj+bpKoa/x5a508TGVzzDn5wpfB7jlBF3XPizznxnUmSJfmi45n/k0hMZ64RXV9GFfakE/Nc
-        qqib+g00IUojZ31JCAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnFichaMariposaColeccion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAANkE3LLaAgAAAAZiS0dEAP8A
         /wD/oL2nkwAAAAl2cEFnAAAAEAAAABAAXMatwwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAwOS0wOS0xM1Qx
