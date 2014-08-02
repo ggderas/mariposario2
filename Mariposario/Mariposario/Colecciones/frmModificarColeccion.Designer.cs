@@ -43,8 +43,6 @@
             this.tbIDColeccion = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBoxTipo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericPrecio)).BeginInit();
@@ -53,8 +51,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtpFechaInicio);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.groupBoxTipo);
@@ -68,7 +64,7 @@
             this.groupBox1.Controls.Add(this.lblID);
             this.groupBox1.Location = new System.Drawing.Point(6, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(575, 502);
+            this.groupBox1.Size = new System.Drawing.Size(575, 495);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -107,7 +103,7 @@
             this.groupBoxTipo.Controls.Add(this.label2);
             this.groupBoxTipo.Controls.Add(this.lbMariposasEnColeccion);
             this.groupBoxTipo.Controls.Add(this.lbMariposas);
-            this.groupBoxTipo.Location = new System.Drawing.Point(26, 188);
+            this.groupBoxTipo.Location = new System.Drawing.Point(26, 168);
             this.groupBoxTipo.Name = "groupBoxTipo";
             this.groupBoxTipo.Size = new System.Drawing.Size(526, 303);
             this.groupBoxTipo.TabIndex = 21;
@@ -211,7 +207,7 @@
             // 
             this.cmbPropietario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPropietario.FormattingEnabled = true;
-            this.cmbPropietario.Location = new System.Drawing.Point(134, 151);
+            this.cmbPropietario.Location = new System.Drawing.Point(134, 122);
             this.cmbPropietario.Name = "cmbPropietario";
             this.cmbPropietario.Size = new System.Drawing.Size(200, 21);
             this.cmbPropietario.TabIndex = 4;
@@ -219,7 +215,7 @@
             // lblEspecie
             // 
             this.lblEspecie.AutoSize = true;
-            this.lblEspecie.Location = new System.Drawing.Point(23, 156);
+            this.lblEspecie.Location = new System.Drawing.Point(23, 127);
             this.lblEspecie.Name = "lblEspecie";
             this.lblEspecie.Size = new System.Drawing.Size(60, 13);
             this.lblEspecie.TabIndex = 15;
@@ -246,30 +242,14 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // dtpFechaInicio
-            // 
-            this.dtpFechaInicio.Location = new System.Drawing.Point(134, 119);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaInicio.TabIndex = 22;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 125);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 13);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Fecha de Inicio:";
-            // 
             // frmModificarColeccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 516);
+            this.ClientSize = new System.Drawing.Size(587, 519);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmModificarColeccion";
-            this.Text = "Mariposario - Modificar colección";
+            this.Text = "Colecciones - Modificar";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBoxTipo.ResumeLayout(false);
@@ -301,7 +281,5 @@
         private System.Windows.Forms.TextBox tbIDColeccion;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
-        private System.Windows.Forms.Label label4;
     }
 }

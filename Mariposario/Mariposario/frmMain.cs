@@ -153,14 +153,13 @@ namespace Mariposario
 
         private void btnColeccionistas_Click(object sender, EventArgs e)
         {
-            //PARA ABRIR EL FORMULARIO COLECCION Y LUEGO RECIBIR LOS DATOS ACTUALIZADOS.
-            formularioColecciones f = new formularioColecciones(this.colecciones, this.biologos, this.coleccionistas, this.mariposasObservacion, this.mariposasColeccion, this.conexion);
-            f.ShowDialog();
-            this.colecciones=f.colecciones;
-            this.biologos=f.personas;
-            this.coleccionistas = f.coleccionistas;
-            this.mariposasObservacion = f.mariposas;
-            this.mariposasColeccion = f.mariposasColeccion;
+            //formularioColecciones f = new formularioColecciones(this.colecciones, this.biologos, this.coleccionistas, this.mariposasObservacion, this.mariposasColeccion, this.conexion);
+            //f.ShowDialog();
+            //this.colecciones=f.colecciones;
+            //this.biologos=f.personas;
+            //this.coleccionistas = f.coleccionistas;
+            //this.mariposasObservacion = f.mariposas;
+            //this.mariposasColeccion = f.mariposasColeccion;
         }
         #endregion
 

@@ -23,15 +23,15 @@ namespace Mariposario {
                 SqlDataReader rdr = cmd.ExecuteReader();
 
                 while(rdr.Read()) {
-                    Coleccionista d = obtenerDueñoColeccion(rdr.GetString(4));
+                    Coleccionista d = obtenerDueñoColeccion(rdr.GetString(3));
                     List<MariposaDeColeccion> m = obtenerMariposasEnColeccion(rdr.GetString(0),mariposas);
-                    Coleccion c = new Coleccion(rdr.GetString(0), rdr.GetString(1), rdr.GetDecimal(2), rdr.GetDateTime(3),new List<MariposaDeColeccion>(), null);
+                    Coleccion c = new Coleccion(rdr.GetString(0), rdr.GetString(1), rdr.GetDecimal(2), new List<MariposaDeColeccion>(), new Coleccionista(rdr.GetString(3), " ", " "));
                     d.Coleccion=c; c.Dueño=d;
                     colecciones.Add(c);
                 }
 
                 this.conexion.Close();
-            //} catch { this.conexion.Close(); return null; }
+           // } catch { this.conexion.Close(); return null; }
             return colecciones;
         }
 
@@ -70,7 +70,7 @@ namespace Mariposario {
         //Función para insertar una colección. 
         //Resive como parámetro el id de la colección, el nombre de la colección, el precio (decimal),
         //El id de la persona (de tipo Biologo o Persona) ya existente en el sistema que será el dueño y las colecciones actuales
-        public bool insertarColeccion(String id, String nombre, decimal precio, DateTime fecha,Persona dueño, List<Coleccion> colecciones, List<MariposaDeColeccion> mariposas) {
+        public bool insertarColeccion(String id, String nombre, decimal precio, Persona dueño, List<Coleccion> colecciones, List<MariposaDeColeccion> mariposas) {
             foreach(Coleccion c in colecciones) 
                 if(c.Identificador==id) return false;
                 
@@ -84,11 +84,10 @@ namespace Mariposario {
             cmd1.Parameters.AddWithValue("@id",id);
             cmd1.Parameters.AddWithValue("@nombre_coleccion", nombre);
             cmd1.Parameters.AddWithValue("@precio", precio);
-            cmd1.Parameters.AddWithValue("@fecha",fecha.ToShortDateString());
             cmd1.Parameters.AddWithValue("@id_persona", dueño.Identificador);
             cmd1.Parameters.AddWithValue("@Parametros",parametros);
              
-            //try {
+            try {
                 this.conexion.Open();
                 cmd1.ExecuteNonQuery();
                 this.conexion.Close();
@@ -104,7 +103,7 @@ namespace Mariposario {
                 }
 
                 return true;
-          // } catch { this.conexion.Close(); return false; }
+           } catch { this.conexion.Close(); return false; }
 
         }
         #endregion
@@ -153,7 +152,6 @@ namespace Mariposario {
             cmd1.Parameters.AddWithValue("@id", c.Identificador);
             cmd1.Parameters.AddWithValue("@nombre", c.Nombre);
             cmd1.Parameters.AddWithValue("@precio", c.Precio);
-            cmd1.Parameters.AddWithValue("@fecha", c.FechaInicio.ToShortDateString());
             cmd1.Parameters.AddWithValue("@id_persona", c.Dueño.Identificador);
             cmd1.Parameters.AddWithValue("@Parametros", parametros);
             try {
