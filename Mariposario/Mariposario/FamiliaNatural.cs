@@ -32,7 +32,7 @@ namespace Mariposario
 
         public override string ToString()
         {
-            return this.Nombre;
+            return  this.Nombre;
         } 
     }
 }

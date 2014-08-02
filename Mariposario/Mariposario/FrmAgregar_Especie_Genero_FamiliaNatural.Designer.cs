@@ -31,11 +31,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbFamiliasOGeneros = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtIdentificador = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -44,25 +44,24 @@
             // 
             this.groupBox1.Controls.Add(this.cbFamiliasOGeneros);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtIdentificador);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnAceptar);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(260, 244);
+            this.groupBox1.Size = new System.Drawing.Size(256, 137);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // cbFamiliasOGeneros
             // 
             this.cbFamiliasOGeneros.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.cbFamiliasOGeneros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFamiliasOGeneros.FormattingEnabled = true;
-            this.cbFamiliasOGeneros.Location = new System.Drawing.Point(110, 94);
+            this.cbFamiliasOGeneros.Location = new System.Drawing.Point(110, 100);
             this.cbFamiliasOGeneros.Name = "cbFamiliasOGeneros";
-            this.cbFamiliasOGeneros.Size = new System.Drawing.Size(121, 21);
+            this.cbFamiliasOGeneros.Size = new System.Drawing.Size(129, 21);
             this.cbFamiliasOGeneros.TabIndex = 10;
             this.cbFamiliasOGeneros.Visible = false;
             // 
@@ -76,19 +75,6 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Familias:";
             this.label3.Visible = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(123, 183);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 41);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "&Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtNombre
             // 
@@ -124,12 +110,25 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Código:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(138, 170);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 41);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(23, 183);
+            this.btnAceptar.Location = new System.Drawing.Point(38, 170);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 41);
             this.btnAceptar.TabIndex = 3;
@@ -141,10 +140,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 268);
+            this.ClientSize = new System.Drawing.Size(277, 226);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.btnCancelar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmAgregar_Especie_Genero_FamiliaNatural";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

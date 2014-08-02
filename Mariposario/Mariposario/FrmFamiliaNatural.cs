@@ -13,61 +13,69 @@ using System.Windows.Forms;
 namespace Mariposario
 {
 
-    public enum Clasificacion{FamiliaNatural, Especie, Genero}
-
+    
     public partial class FrmFamiliaNatural : Form
     {
         Conexion conexion = new Conexion();
         List<FamiliaNatural> listaFamiliaNatural;
-      
+        public frmMain FrmMain { set; get; }
+
         #region Constructores
         public FrmFamiliaNatural()
         {
             InitializeComponent();
-           listaFamiliaNatural = conexion.obtenerFamiliaNatural();
-           this.lbxFamiliaNatural.Items.AddRange(listaFamiliaNatural.ToArray());
+            //listaFamiliaNatural = conexion.obtenerFamiliaNatural();
+           //this.lbxFamiliaNatural.Items.AddRange(listaFamiliaNatural.ToArray());
            
         }
 
-        public FrmFamiliaNatural(List<FamiliaNatural> lista)
+        public FrmFamiliaNatural(frmMain frmMain)
         {
             InitializeComponent();
-            listaFamiliaNatural = lista;
-            this.lbxFamiliaNatural.Items.AddRange(listaFamiliaNatural.ToArray());
+            this.FrmMain = frmMain;
+            this.listaFamiliaNatural = this.FrmMain.FamiliasNaturales;
+            if(this.listaFamiliaNatural.Count!=0)
+              this.lbxFamiliaNatural.Items.AddRange(listaFamiliaNatural.ToArray());
+
         }
 
         #endregion
 
-        #region Carga las familas Naturales y los generos que corresponden a cada familia
+        #region Carga las familas Naturales y los generos que corresponden a cada familia  
        
         private void lbxFamiliaNatural_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.lbxInformacion.Items.Clear();
-            cargarFamiliaNatural();
+            cargarGeneros();
               
         }
         #endregion
 
-        private void cargarFamiliaNatural() {
+        private void cargarGeneros() {
+            
             FamiliaNatural familia = (FamiliaNatural)this.lbxFamiliaNatural.SelectedItem;
             if (familia != null) {
                 if (familia.Generos != null)
                 {
+                    this.txtCodigo.Text = familia.Identificador;
                     this.lbxInformacion.Items.AddRange(familia.Generos.ToArray());
                 } 
             }
             
         }
+
+        #region Agregar Familia 
         private void btnAgregar_Click(object sender, EventArgs e)
         {      
-            FrmAgregar_Especie_Genero_FamiliaNatural f = new FrmAgregar_Especie_Genero_FamiliaNatural(new FamiliaNatural("",""));
+            FrmAgregar_Especie_Genero_FamiliaNatural f = new FrmAgregar_Especie_Genero_FamiliaNatural(new FamiliaNatural("",""),FrmMain);
             f.ShowDialog();
             if (f.DialogResult == DialogResult.OK) {
                 this.actualizaElLisboxFamiliaNatural();
+               
             }
         }
+        #endregion
 
-        
         #region Eliminar Familia Natural
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -77,16 +85,16 @@ namespace Mariposario
                 if ((conexion.eliminarFamiliaNatural(f.Identificador)))
                 {
                     this.actualizaElLisboxFamiliaNatural();
-                    MessageBox.Show("Eliminación Exitosa");
+                    MessageBox.Show("Eliminación Exitosa","Eliminar Familia Natural...",MessageBoxButtons.OK);
                 }
                 else
                 {
-                    MessageBox.Show("Eliminación fallida");
+                    MessageBox.Show("Eliminación fallida", "Eliminar Familia Natural...", MessageBoxButtons.OK);
                 }
             }
             else
             {
-                MessageBox.Show("Seleccione una Familia Natural");
+                MessageBox.Show("Seleccione una Familia Natural","Familia Natural..",MessageBoxButtons.OK);
             }
         }
     
@@ -98,26 +106,29 @@ namespace Mariposario
             if (lbxFamiliaNatural.SelectedItem != null)
             {
                 FamiliaNatural f = (FamiliaNatural)this.lbxFamiliaNatural.SelectedItem;
-                FrmActualizar frm = new FrmActualizar(f);
+                FrmActualizar frm = new FrmActualizar(f,FrmMain);
                 frm.ShowDialog();
                 actualizaElLisboxFamiliaNatural();
             }
             else
             {
-                MessageBox.Show("Seleccione un elemento");
+                MessageBox.Show("Seleccione un elemento","Familia Natural",MessageBoxButtons.OK );
             }
         }
         #endregion
 
         #region obtener Familia Natural
+
         private void actualizaElLisboxFamiliaNatural() {
-            listaFamiliaNatural = conexion.obtenerFamiliaNatural();
+            this.FrmMain.CargarBaseDeDatos();
+            listaFamiliaNatural = this.FrmMain.FamiliasNaturales;
             this.lbxFamiliaNatural.Items.Clear();
             this.lbxFamiliaNatural.Items.AddRange(listaFamiliaNatural.ToArray());
                      
         }
         #endregion
 
+    
       
     }
 }

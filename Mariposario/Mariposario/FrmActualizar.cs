@@ -16,6 +16,7 @@ namespace Mariposario
         Conexion conexion = new Conexion();
         List<FamiliaNatural> listaFamiliaNatural;
         List<Genero> listaGenero;
+        public frmMain FrmMain { set; get; }
 
         public FrmActualizar()
         {
@@ -25,11 +26,11 @@ namespace Mariposario
         /*Formulario que activa o desactiva los controles de acuerdo al tipo de objeto
              que se le envie
         */
-        public FrmActualizar(object obj)
+        public FrmActualizar(object obj,frmMain frmMain)
         {
             InitializeComponent();
             clasificador = obj;
-
+            this.FrmMain = frmMain;
             if (obj is FamiliaNatural) {
                 FamiliaNatural f = (FamiliaNatural)obj;
                 this.txtIdentificador.Text = f.Identificador;
@@ -43,18 +44,39 @@ namespace Mariposario
                     this.txtNombre.Text = g.Nombre;
                     this.txtIdentificador.Text = g.Identificador;
                     this.cbFamiliaGeneros.Visible = true;
-                    this.listaFamiliaNatural = conexion.obtenerFamiliaNatural();
+                    this.listaFamiliaNatural = this.FrmMain.FamiliasNaturales;
                     if (listaFamiliaNatural != null) {
                         this.cbFamiliaGeneros.Items.AddRange(listaFamiliaNatural.ToArray());
-                        this.cbFamiliaGeneros.SelectedIndex =buscarFamilia();    
-                    }
+                        if (cbFamiliaGeneros.Items.Count != 0) {
+                            if (buscarFamilia() != -1) {
+                                this.cbFamiliaGeneros.SelectedIndex = buscarFamilia();    
+                   
+                            }
+                            
+                          }
+                     }
                  }
                 else if (obj is Especie)
                {
+                   this.txtNombre.Visible = false;
                     this.lblCodigo.Text = "Nombre Científico";
-                    this.lblNombre.Text = "Código Genero";
+                    this.txtIdentificador.Location = new Point(140, 27);
+                    this.txtIdentificador.Size = new Size(100, 20);
+                    this.lblNombre.Text = "Código Género: ";
+                    this.cbFamiliaGeneros.Visible = true;
+                    this.cbFamiliaGeneros.Size = new Size(100, 20);
+                    this.cbFamiliaGeneros.Location = new Point(140, 67); 
                     Especie e = (Especie)obj;
-                    this.txtNombre.Text = e.NombreCientifico;
+                    this.txtIdentificador.Text = e.NombreCientifico;
+                    listaGenero = FrmMain.Generos;
+                    if ( listaGenero != null ) {
+                        cbFamiliaGeneros.Items.AddRange(listaGenero.ToArray());
+                        if (cbFamiliaGeneros.Items.Count != 0) {
+                            if (buscarGenero() != -1) {
+                                this.cbFamiliaGeneros.SelectedIndex = buscarGenero();
+                            }
+                        }
+                    }
                 }
 
         }
@@ -72,29 +94,41 @@ namespace Mariposario
            return -1;
         }
 
+        /*Metodo que busca el género de la Especie*/
+      
+        private int buscarGenero() {
+
+            Especie e = (Especie)this.clasificador;
+            for (int i = 0; i < listaGenero.Count; i++)
+            {
+                if (listaGenero[i].Identificador.Equals(e.Genero.Identificador))
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
+
         /*Metodo que verifica que todos los campos esten llenos*/
         private bool NohayCamposVacios()
         {
-            if (clasificador is FamiliaNatural || clasificador is Especie) {
+            if (clasificador is FamiliaNatural || clasificador is Genero) {
                 if (String.IsNullOrWhiteSpace(txtIdentificador.Text) || String.IsNullOrWhiteSpace(txtNombre.Text))
-                {   MessageBox.Show("Llene todos los campos, es de cáracter obligatorio");
+                {   MessageBox.Show("Llene todos los campos, es de cáracter obligatorio","Actualizar",MessageBoxButtons.OK);
                     return false;
                 }
             }
-            else if (clasificador is Genero) {
-                if (String.IsNullOrWhiteSpace(txtIdentificador.Text) || String.IsNullOrWhiteSpace(txtNombre.Text))
+            else if (clasificador is Especie) {
+                if (String.IsNullOrWhiteSpace(txtIdentificador.Text))
                 {
-                    MessageBox.Show("Llene todos los campos, es de cáracter obligatorio");
+                    MessageBox.Show("Llene todos los campos, es de cáracter obligatorio", "Actualizar", MessageBoxButtons.OK);
                     return false;
                 } 
             }
             
             return true;
-        }
-
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -110,24 +144,52 @@ namespace Mariposario
                 if (NohayCamposVacios()) {
                     if (conexion.modificarFamiliaNatural(f.Identificador, this.txtIdentificador.Text, this.txtNombre.Text))
                     {
+                        this.FrmMain.CargarBaseDeDatos();
                         this.DialogResult = DialogResult.OK;
-                        MessageBox.Show("Actualización Exitosa");
+                        MessageBox.Show("Actualización Exitosa", "Actualizar Familia Natural", MessageBoxButtons.OK);
                         this.Close();
+                    }
+                    else {
+                        MessageBox.Show("Actualización Fallida", "Actualizar Familia Natural", MessageBoxButtons.OK);
+                       
                     }
                 }
              }
             else if (clasificador is Especie)
-                   {  Genero g = (Genero)clasificador;
+                   {  Especie e = (Especie)clasificador;
+                        
+                      if (NohayCamposVacios()) { 
+                            Genero genero = (Genero)this.cbFamiliaGeneros.SelectedItem;
+                            if (conexion.modificarEspecie(e.NombreCientifico, this.txtIdentificador.Text, genero.Identificador))
+                            {
+                                this.FrmMain.CargarBaseDeDatos();
+                                MessageBox.Show("Actualización Exitosa", "Actualizar Género..", MessageBoxButtons.OK);
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
+                            else {
+                                MessageBox.Show("Actualización Fallida", "Actualizar Especie", MessageBoxButtons.OK);
+                        
+                            }
+
+                        }
+
                    }
             else if (clasificador is Genero)
                    {   Genero genero = (Genero)clasificador;
                       if (NohayCamposVacios())
                      {
                           FamiliaNatural f = (FamiliaNatural)this.cbFamiliaGeneros.SelectedItem;
-                          if (conexion.modificarGenero(genero.Identificador,txtIdentificador.Text,txtNombre.Text,f.Identificador)) {
-                              MessageBox.Show("Actualización Exitosa");
+                          if (conexion.modificarGenero(genero.Identificador, txtIdentificador.Text, txtNombre.Text, f.Identificador))
+                          {
+                              this.FrmMain.CargarBaseDeDatos();
+                              MessageBox.Show("Actualización Exitosa", "Actualizar Género..", MessageBoxButtons.OK);
                               this.DialogResult = DialogResult.OK;
                               this.Close();
+                          }
+                          else {
+                              MessageBox.Show("Actualización Fallida", "Actualizar Género..", MessageBoxButtons.OK);
+                             
                           }
                       }
                    } 
@@ -139,5 +201,7 @@ namespace Mariposario
         {
             this.Close();
         }
+
+        
     }
 }

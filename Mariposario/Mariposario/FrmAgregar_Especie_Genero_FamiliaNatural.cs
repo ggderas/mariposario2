@@ -15,6 +15,7 @@ namespace Mariposario
         List<FamiliaNatural> listaFamilia;
         List<Genero> listaGenero;
         object clasificador;
+        public frmMain Frmain { set; get; }
 
         public FrmAgregar_Especie_Genero_FamiliaNatural()
         {
@@ -24,20 +25,43 @@ namespace Mariposario
        /*Constructor que recibe un objeto, esto es para ver si es familia natural
             especie, genero en base a cualquiera de ellos se van a poner invisibles algunos controles.
         */
-        public FrmAgregar_Especie_Genero_FamiliaNatural(object obj)
+        public FrmAgregar_Especie_Genero_FamiliaNatural(object obj,frmMain frmMain)
         {
             InitializeComponent();
-           
+            this.Frmain = frmMain;
             clasificador = obj;
             if ( obj is Genero ) {
                 this.label2.Visible = true;
                 this.label3.Visible = true;     
                 this.cbFamiliasOGeneros.Visible = true;
-                listaFamilia = conexion.obtenerFamiliaNatural();
-                this.cbFamiliasOGeneros.Items.AddRange(listaFamilia.ToArray());
-               // this.cbFamiliasOGeneros.SelectedItem = 0;
-
+                listaFamilia = this.Frmain.FamiliasNaturales;
+                if (listaFamilia!=null) {
+                    this.cbFamiliasOGeneros.Items.AddRange(listaFamilia.ToArray());
+                    if (this.cbFamiliasOGeneros.Items.Count != 0)
+                    {
+                        this.cbFamiliasOGeneros.SelectedIndex = 0;
+                    }
+                }
             }
+            else if( obj is Especie) {
+                    this.label1.Text = "Nombre Cientifico: ";
+                    this.txtIdentificador.Location = new Point(140, 27);
+                    this.txtIdentificador.Size = new Size(100, 20);
+                    this.label2.Text = "Familias: ";
+                    this.txtNombre.Visible = false;
+                    this.cbFamiliasOGeneros.Location = new Point(140,67);
+                    this.cbFamiliasOGeneros.Size = new Size(100, 20); 
+                    this.cbFamiliasOGeneros.Visible = true;
+                    listaGenero = Frmain.Generos;
+                    if ( listaGenero != null) {
+                        this.cbFamiliasOGeneros.Items.AddRange(listaGenero.ToArray());
+                        if (this.cbFamiliasOGeneros.Items.Count != 0)
+                        {
+                            this.cbFamiliasOGeneros.SelectedIndex = 0;
+                        }
+                    }
+            
+                }
         }
 
         /*Metodo que inserta los registros en la base de datos, ya sea una familia natural, una especie, un genero*/
@@ -46,12 +70,13 @@ namespace Mariposario
                 if (NohayCamposVacios()) {
                     if (conexion.insertarFamiliaNatural(this.txtIdentificador.Text, this.txtNombre.Text))
                     {
-                        MessageBox.Show("La Familia Natural fue agregada éxitosamente");
+                        this.Frmain.CargarBaseDeDatos();
+                        MessageBox.Show("La Familia Natural fue agregada éxitosamente","Agregar Familia Natural",MessageBoxButtons.OK);
                         this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
-                        MessageBox.Show("Operación fallida");
+                        MessageBox.Show("Operación fallida", "Agregar Familia Natural", MessageBoxButtons.OK);
                     }
                 }
             }
@@ -60,22 +85,34 @@ namespace Mariposario
                         if (NohayCamposVacios()) {
                             if (conexion.insertarGenero(this.txtIdentificador.Text, txtNombre.Text, f.Identificador))
                             {
-                                MessageBox.Show("El genero fue agregado éxitosamente");
+                                this.Frmain.CargarBaseDeDatos();
+                                MessageBox.Show("El género fue agregado éxitosamente","Agregar Género",MessageBoxButtons.OK);
                                 this.DialogResult = DialogResult.OK;
                             }
                             else {
-                                MessageBox.Show("Operación fallida");
+                                MessageBox.Show("Operación fallida", "Agregar Género", MessageBoxButtons.OK);
                             }
                         }
                 }
                 else if ( clasificador is Especie ) {
-                            Especie especie = (Especie)clasificador;
-                            if (conexion.insertarEspecie(this.txtIdentificador.Text, especie.Genero.Identificador)) {
-                                this.DialogResult = DialogResult.OK;
+                                Genero genero = (Genero)this.cbFamiliasOGeneros.SelectedItem;
+                            if (NohayCamposVacios()) {
+                                if (conexion.insertarEspecie(this.txtIdentificador.Text, genero.Identificador))
+                                {
+                                    this.DialogResult = DialogResult.OK;
+                                    this.Frmain.CargarBaseDeDatos();
+                                    MessageBox.Show("La Especie fue agregado éxitosamente", "Agregar Especie", MessageBoxButtons.OK);
+
+                                }
+                                 else
+                                     {
+                                          MessageBox.Show("Operación fallida", "Agregar Especie", MessageBoxButtons.OK);
+                                     }
                             }
                         }
             
         }
+
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -87,12 +124,20 @@ namespace Mariposario
         #region Metodo NoHayCamposVacios
         /*Metodo que verifica si hay campos vacios*/
         public bool NohayCamposVacios() {
-            
-            if (String.IsNullOrWhiteSpace(txtIdentificador.Text) || String.IsNullOrWhiteSpace(txtNombre.Text))
+
+            if (clasificador is Especie) {
+                if (String.IsNullOrWhiteSpace(txtIdentificador.Text))
                 {
                     MessageBox.Show("Llene todos los campos, es de cáracter obligatorio");
                     return false;
                 }
+            }
+
+            else if (String.IsNullOrWhiteSpace(txtIdentificador.Text) || String.IsNullOrWhiteSpace(txtNombre.Text))
+                    {
+                        MessageBox.Show("Llene todos los campos, es de cáracter obligatorio");
+                        return false;
+                     }
             
             return true;
         }

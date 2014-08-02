@@ -176,8 +176,7 @@
             this.listBoxMariposasColeccion.Name = "listBoxMariposasColeccion";
             this.listBoxMariposasColeccion.Size = new System.Drawing.Size(162, 238);
             this.listBoxMariposasColeccion.TabIndex = 0;
-            // 
-            // btnEliminarMariposasColeccion
+           // btnEliminarMariposasColeccion
             // 
             this.btnEliminarMariposasColeccion.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarMariposasColeccion.Image")));
             this.btnEliminarMariposasColeccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

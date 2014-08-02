@@ -210,25 +210,25 @@ namespace Mariposario
 
         private void familiasNaturalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmFamiliaNatural formulario = new FrmFamiliaNatural();
+            FrmFamiliaNatural formulario = new FrmFamiliaNatural(this.form);
             formulario.ShowDialog();
         }
 
         private void génerosToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            FrmGenero formulario = new FrmGenero();
+            FrmGenero formulario = new FrmGenero(this.form);
             formulario.ShowDialog();
         }
 
         private void génerosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmGenero formulario = new FrmGenero();
+            FrmGenero formulario = new FrmGenero(this.form);
             formulario.ShowDialog();
         }
 
         private void espciesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmEspecie formulario = new FrmEspecie();
+            FrmEspecie formulario = new FrmEspecie(this.form);
             formulario.ShowDialog();
         }
 
@@ -422,5 +422,6 @@ namespace Mariposario
 
         #endregion
 
+        
     }
 }

@@ -133,3 +133,29 @@ C:\Users\LuisManuel Deras\Desktop\mariposario-master\Mariposario\mariposario\obj
 C:\Users\LuisManuel Deras\Desktop\mariposario-master\Mariposario\mariposario\obj\x86\Debug\Mariposario.Properties.Resources.resources
 C:\Users\LuisManuel Deras\Desktop\mariposario-master\Mariposario\mariposario\obj\x86\Debug\Mariposario.csproj.GenerateResource.Cache
 C:\Users\LuisManuel Deras\Desktop\mariposario-master\Mariposario\mariposario\obj\x86\Debug\Mariposario.csprojResolveAssemblyReference.cache
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioAgregarColeccion.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioColecciones.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioActualizarMariposa.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioFichaMariposaColeccion.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioFichaMariposaObservacion.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioMariposas.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioNuevaCapturaMariposa.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.FrmActualizar.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmAdminBiologos.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmAdminColeccionistas.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.FrmAgregar_Especie_Genero_FamiliaNatural.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmBiologos.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmColeccionistas.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmConsultas.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.FrmEspecie.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.FrmFamiliaNatural.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.FrmGenero.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmMain.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmZonaGeografica.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.Properties.Resources.resources
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.csproj.GenerateResource.Cache
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\bin\Debug\WindowsApplication.exe.config
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\bin\Debug\WindowsApplication.exe
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\bin\Debug\WindowsApplication.pdb
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\WindowsApplication.exe
+C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\WindowsApplication.pdb

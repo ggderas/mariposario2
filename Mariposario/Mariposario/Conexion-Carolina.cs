@@ -256,7 +256,7 @@ namespace Mariposario
 
             comando.Parameters.AddWithValue("@id", id);
             comando.Parameters.AddWithValue("@nombre_familia", nombre_familia);
-    
+
             try
             {
                 this.conexion.Open();
@@ -322,18 +322,11 @@ namespace Mariposario
         #region Agregar Especie
         public Boolean insertarEspecie(String nombre_cientifico, String id_genero)
         {
-            SqlCommand comando = new SqlCommand("insertarFamiliaNatural", this.conexion);
+            SqlCommand comando = new SqlCommand("insertarEspecie", this.conexion);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-
-            SqlParameter nombreCientificoBD = comando.Parameters.Add("@nombre_cientifico", System.Data.SqlDbType.NVarChar, 50);
-            nombreCientificoBD.Direction = System.Data.ParameterDirection.Input;
-
-            SqlParameter idGeneroDB = comando.Parameters.Add("@id_genero", System.Data.SqlDbType.NChar, 10);
-            idGeneroDB.Direction = System.Data.ParameterDirection.Input;
-
-            nombreCientificoBD.Value = nombre_cientifico;
-            idGeneroDB.Value = id_genero;
-
+            comando.Parameters.AddWithValue("@nombre_cientifico",nombre_cientifico);
+            comando.Parameters.AddWithValue("@id_genero",id_genero);
+            
             try
             {
                 this.conexion.Open();
@@ -491,11 +484,10 @@ namespace Mariposario
         #region modificar Especie
         public Boolean modificarEspecie(String nombreViejo, String nombreNuevo, String id_genero)
         {
-            SqlCommand comando = new SqlCommand("actualizarEspecie", this.conexion);
+            SqlCommand comando = new SqlCommand("actualizar_especie", this.conexion);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@nombreViejo", nombreViejo);
-            comando.Parameters.AddWithValue("@nombreViejo", nombreViejo);
-            comando.Parameters.AddWithValue("@nombreViejo", nombreViejo);
+            comando.Parameters.AddWithValue("@nombreNuevo", nombreNuevo);
             comando.Parameters.AddWithValue("@id_genero", id_genero);
             
             
