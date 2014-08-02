@@ -76,10 +76,10 @@ namespace Mariposario{
             } else {
                 Biologo p = (Biologo)this.personas.ElementAt(this.cmbPropietario.SelectedIndex);
                 if(colecciones==null) this.colecciones= new List<Coleccion>();
-                Coleccion c = new Coleccion(this.tbIDColeccion.Text, this.tbNombre.Text, this.numericPrecio.Value, this.mariposasColeccion, null);
+                Coleccion c = new Coleccion(this.tbIDColeccion.Text, this.tbNombre.Text, this.numericPrecio.Value,this.dtpFechaInicio.Value.Date, this.mariposasColeccion, null);
                 foreach(MariposaDeColeccion mC in mariposasColeccion)
                     mC.Coleccion=c;
-                if(this.conexion.insertarColeccion(this.tbIDColeccion.Text, this.tbNombre.Text, this.numericPrecio.Value, p, colecciones, this.mariposasColeccion)) {
+                if(this.conexion.insertarColeccion(this.tbIDColeccion.Text, this.tbNombre.Text, this.numericPrecio.Value,this.dtpFechaInicio.Value, p, colecciones, this.mariposasColeccion)) {
                     Coleccionista coleccionista = new Coleccionista(p.Identificador, p.Nombres, p.Apellidos);
                     c.Dueño=coleccionista;
                     this.colecciones.Add(c); this.coleccionistas.Add(coleccionista);

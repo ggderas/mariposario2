@@ -28,6 +28,7 @@ namespace Mariposario{
             this.tbIDColeccion.Text=this.coleccion.Identificador;
             this.tbNombre.Text = this.coleccion.Nombre;
             this.numericPrecio.Value = this.coleccion.Precio;
+            this.dtpFechaInicio.Value = this.coleccion.FechaInicio;
             this.llenarListBox();
         }
 
@@ -76,7 +77,7 @@ namespace Mariposario{
                 this.coleccion.Precio=this.numericPrecio.Value;
                 this.coleccion.Mariposas=this.mariposasColeccion;
                 this.coleccion.Nombre=tbNombre.Text;
-                
+                this.coleccion.FechaInicio = this.dtpFechaInicio.Value.Date;
                 if(this.cmbPropietario.SelectedIndex>0) {
                     Biologo p = this.personas.ElementAt(this.cmbPropietario.SelectedIndex);
                     this.personas.Add(new Biologo(this.coleccion.Dueño.Identificador,this.coleccion.Dueño.Nombres,this.coleccion.Dueño.Apellidos,null));

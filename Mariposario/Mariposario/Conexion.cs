@@ -14,7 +14,8 @@ namespace Mariposario
 {
     public partial class Conexion
     {
-        private String cadenaConexion = "Data Source=.\\SQLEXPRESS;Initial Catalog=MariposarioDB;Integrated Security=True";
+        private String cadenaConexion = "Data Source=IBC-PC;Initial Catalog=MariposarioDB;Integrated Security=True";
+        //private String cadenaConexion = "Data Source=.\\SQLEXPRESS;Initial Catalog=MariposarioDB;Integrated Security=True";
         private SqlConnection conexion;
 
         public Conexion()
