@@ -17,7 +17,7 @@ namespace Mariposario {
             SqlCommand cmd = new SqlCommand("dbo.SelectColeccion", this.conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            //try {
+            try {
                 this.conexion.Open();
 
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -25,13 +25,13 @@ namespace Mariposario {
                 while(rdr.Read()) {
                     Coleccionista d = obtenerDueñoColeccion(rdr.GetString(4));
                     List<MariposaDeColeccion> m = obtenerMariposasEnColeccion(rdr.GetString(0),mariposas);
-                    Coleccion c = new Coleccion(rdr.GetString(0), rdr.GetString(1), rdr.GetDecimal(2), rdr.GetDateTime(3),new List<MariposaDeColeccion>(), null);
+                    Coleccion c = new Coleccion(rdr.GetString(0).Trim(), rdr.GetString(1).Trim(), rdr.GetDecimal(2), rdr.GetDateTime(3),new List<MariposaDeColeccion>(), null);
                     d.Coleccion=c; c.Dueño=d;
                     colecciones.Add(c);
                 }
 
                 this.conexion.Close();
-            //} catch { this.conexion.Close(); return null; }
+            } catch { this.conexion.Close(); return null; }
             return colecciones;
         }
 
@@ -88,7 +88,7 @@ namespace Mariposario {
             cmd1.Parameters.AddWithValue("@id_persona", dueño.Identificador);
             cmd1.Parameters.AddWithValue("@Parametros",parametros);
              
-            //try {
+            try {
                 this.conexion.Open();
                 cmd1.ExecuteNonQuery();
                 this.conexion.Close();
@@ -104,7 +104,7 @@ namespace Mariposario {
                 }
 
                 return true;
-          // } catch { this.conexion.Close(); return false; }
+           } catch { this.conexion.Close(); return false; }
 
         }
         #endregion
@@ -142,6 +142,8 @@ namespace Mariposario {
         #endregion
 
         #region Actualizar Colección
+        //Función que actualiza una colección en la base de datos.
+        //Recibe como parametros la colección a actualizar y la lista de mariposas que van a insertarse en la tabla mariposas_en_observacion
         public bool actualizarColeccion(Coleccion c, List<MariposaEnObservacion> mO) {
             SqlCommand cmd1 = new SqlCommand("actualizarColeccion", this.conexion);
             cmd1.CommandType = System.Data.CommandType.StoredProcedure;
@@ -183,6 +185,21 @@ namespace Mariposario {
 
                 return true;
             } catch { this.conexion.Close(); return false; }
+        }
+        #endregion
+
+        #region Consultas
+        //Función para crear las consultas 5 y 6. 
+        //Recibe como parametro una cadena que es el nombre del procedimiento almacenado.
+        public DataTable consulta(String consulta) {
+            SqlCommand comando = new SqlCommand(consulta, this.conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            this.conexion.Open();
+            SqlDataReader lector = comando.ExecuteReader();
+            DataTable tabla = new DataTable();
+            tabla.Load(lector);
+            this.conexion.Close();
+            return tabla;
         }
         #endregion
     }

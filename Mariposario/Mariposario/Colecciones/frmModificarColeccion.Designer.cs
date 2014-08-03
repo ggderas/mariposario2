@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBoxTipo = new System.Windows.Forms.GroupBox();
@@ -43,8 +45,6 @@
             this.tbIDColeccion = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBoxTipo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericPrecio)).BeginInit();
@@ -72,6 +72,22 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
+            // dtpFechaInicio
+            // 
+            this.dtpFechaInicio.Location = new System.Drawing.Point(134, 119);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaInicio.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Fecha de Inicio:";
+            // 
             // btnAgregar
             // 
             this.btnAgregar.Image = global::Mariposario.Properties.Resources.icono_agregar;
@@ -79,7 +95,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(374, 29);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 43);
-            this.btnAgregar.TabIndex = 6;
+            this.btnAgregar.TabIndex = 10;
             this.btnAgregar.Text = "Aceptar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -93,7 +109,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(477, 29);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 43);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -122,7 +138,7 @@
             this.lblEliminarMariposa.Location = new System.Drawing.Point(246, 159);
             this.lblEliminarMariposa.Name = "lblEliminarMariposa";
             this.lblEliminarMariposa.Size = new System.Drawing.Size(40, 29);
-            this.lblEliminarMariposa.TabIndex = 6;
+            this.lblEliminarMariposa.TabIndex = 9;
             this.lblEliminarMariposa.Click += new System.EventHandler(this.lblEliminarMariposa_Click);
             // 
             // lblAgregarMariposa
@@ -133,7 +149,7 @@
             this.lblAgregarMariposa.Location = new System.Drawing.Point(246, 96);
             this.lblAgregarMariposa.Name = "lblAgregarMariposa";
             this.lblAgregarMariposa.Size = new System.Drawing.Size(40, 29);
-            this.lblAgregarMariposa.TabIndex = 6;
+            this.lblAgregarMariposa.TabIndex = 7;
             this.lblAgregarMariposa.Click += new System.EventHandler(this.lblAgregarMariposa_Click);
             // 
             // label3
@@ -160,7 +176,7 @@
             this.lbMariposasEnColeccion.Location = new System.Drawing.Point(292, 51);
             this.lbMariposasEnColeccion.Name = "lbMariposasEnColeccion";
             this.lbMariposasEnColeccion.Size = new System.Drawing.Size(202, 238);
-            this.lbMariposasEnColeccion.TabIndex = 2;
+            this.lbMariposasEnColeccion.TabIndex = 8;
             // 
             // lbMariposas
             // 
@@ -168,7 +184,7 @@
             this.lbMariposas.Location = new System.Drawing.Point(38, 51);
             this.lbMariposas.Name = "lbMariposas";
             this.lbMariposas.Size = new System.Drawing.Size(202, 238);
-            this.lbMariposas.TabIndex = 5;
+            this.lbMariposas.TabIndex = 6;
             // 
             // tbNombre
             // 
@@ -214,7 +230,7 @@
             this.cmbPropietario.Location = new System.Drawing.Point(134, 151);
             this.cmbPropietario.Name = "cmbPropietario";
             this.cmbPropietario.Size = new System.Drawing.Size(200, 21);
-            this.cmbPropietario.TabIndex = 4;
+            this.cmbPropietario.TabIndex = 5;
             // 
             // lblEspecie
             // 
@@ -245,22 +261,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // dtpFechaInicio
-            // 
-            this.dtpFechaInicio.Location = new System.Drawing.Point(134, 119);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaInicio.TabIndex = 22;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 125);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 13);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Fecha de Inicio:";
             // 
             // frmModificarColeccion
             // 
