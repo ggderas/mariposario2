@@ -1,5 +1,5 @@
 ﻿namespace Mariposario {
-    partial class formularioAgregarColeccion {
+    partial class frmModificarColeccion {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -26,12 +26,12 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numericPrecio = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.cmbPropietario = new System.Windows.Forms.ComboBox();
             this.lblEspecie = new System.Windows.Forms.Label();
@@ -46,29 +46,38 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtpFechaInicio);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.tbNombre);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.numericPrecio);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lblPrecio);
             this.groupBox1.Controls.Add(this.cmbPropietario);
             this.groupBox1.Controls.Add(this.lblEspecie);
             this.groupBox1.Controls.Add(this.tbIDColeccion);
             this.groupBox1.Controls.Add(this.lblID);
-            this.groupBox1.Location = new System.Drawing.Point(4, 12);
+            this.groupBox1.Location = new System.Drawing.Point(6, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(457, 202);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.Size = new System.Drawing.Size(463, 188);
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // dtpFechaInicio
             // 
-            this.dtpFechaInicio.Location = new System.Drawing.Point(134, 129);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(134, 119);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaInicio.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Fecha de Inicio:";
             // 
             // btnAgregar
             // 
@@ -125,15 +134,6 @@
             this.numericPrecio.Size = new System.Drawing.Size(120, 20);
             this.numericPrecio.TabIndex = 3;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 135);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 13);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Fecha de Inicio:";
-            // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
@@ -147,7 +147,7 @@
             // 
             this.cmbPropietario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPropietario.FormattingEnabled = true;
-            this.cmbPropietario.Location = new System.Drawing.Point(134, 164);
+            this.cmbPropietario.Location = new System.Drawing.Point(134, 151);
             this.cmbPropietario.Name = "cmbPropietario";
             this.cmbPropietario.Size = new System.Drawing.Size(200, 21);
             this.cmbPropietario.TabIndex = 5;
@@ -155,7 +155,7 @@
             // lblEspecie
             // 
             this.lblEspecie.AutoSize = true;
-            this.lblEspecie.Location = new System.Drawing.Point(23, 167);
+            this.lblEspecie.Location = new System.Drawing.Point(23, 156);
             this.lblEspecie.Name = "lblEspecie";
             this.lblEspecie.Size = new System.Drawing.Size(60, 13);
             this.lblEspecie.TabIndex = 15;
@@ -163,6 +163,7 @@
             // 
             // tbIDColeccion
             // 
+            this.tbIDColeccion.Enabled = false;
             this.tbIDColeccion.Location = new System.Drawing.Point(134, 29);
             this.tbIDColeccion.Name = "tbIDColeccion";
             this.tbIDColeccion.Size = new System.Drawing.Size(200, 20);
@@ -181,16 +182,14 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // formularioAgregarColeccion
+            // frmModificarColeccion
             // 
-            this.AcceptButton = this.btnAgregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(466, 218);
+            this.ClientSize = new System.Drawing.Size(475, 204);
             this.Controls.Add(this.groupBox1);
-            this.Name = "formularioAgregarColeccion";
-            this.Text = "Mariposario - Agregar Colección";
+            this.Name = "frmModificarColeccion";
+            this.Text = "Mariposario - Modificar colección";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericPrecio)).EndInit();
@@ -202,6 +201,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericPrecio;
@@ -210,8 +211,6 @@
         private System.Windows.Forms.Label lblEspecie;
         private System.Windows.Forms.TextBox tbIDColeccion;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.Label label4;

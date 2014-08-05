@@ -177,9 +177,7 @@ namespace Mariposario
                     this.conexion.Close();
                     return false;
                 }
-            }
-            catch (SqlException)
-            {
+            } catch(SqlException) {
                 this.conexion.Close();
                 return false;
             }

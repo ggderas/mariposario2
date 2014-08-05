@@ -325,7 +325,7 @@ BEGIN
 			ROLLBACK TRANSACTION
 
 
-	END TRY;
+	END TRY
 
 	BEGIN CATCH
 		ROLLBACK TRANSACTION;
@@ -334,7 +334,7 @@ BEGIN
 END;
 
 
---Actualizar mariposa
+--Eliminar mariposa
 
 CREATE PROCEDURE eliminarMariposa
 	(@idMariposa NCHAR(10))
@@ -361,15 +361,14 @@ BEGIN
 
 
 
-	END TRY;
+	END TRY
 
 	BEGIN CATCH
 		ROLLBACK TRANSACTION;
 	END CATCH;
-
 END;
 
---Eliminar mariposa
+--Actualizar mariposa
 
 CREATE PROCEDURE actualizarMariposa
 	(@idMariposa NCHAR(10),
@@ -427,3 +426,44 @@ BEGIN
 	END CATCH;
 	
 END;
+
+-- COLECCIONES (SAULI)
+--PROCEDIMIENTO PARA INSERTAR UNA COLECCION Y REALIZAR LAS ACTUALIZACIONES CORRESPONDIENTES
+
+create procedure insertarColeccion (@id nchar(10), @nombre_coleccion nvarchar(50),@precio decimal,@fecha date,@id_persona nchar(10))
+as
+begin
+	insert into Coleccion values(@id,@nombre_coleccion,@precio,@fecha,@id_persona);
+	update Persona set tipo='C' where id=@id_persona;
+end;
+
+
+--PROCEDIMIENTO PARA ELIMINAR UNA COLECCION Y REALIZAR LAS ACTUALIZACIONES CORRESPONDIENTES
+create procedure eliminarColeccion (@id nchar(10), @id_persona nchar(10))
+as
+begin
+	delete from Mariposa where id in (Select id_mariposa from Mariposa_en_Coleccion where id_coleccion=@id);
+	delete from Mariposa_en_Coleccion where id_coleccion=@id;
+	delete from Coleccion where id=@id;
+	update Persona set tipo='B' where id=@id_persona;
+end;
+
+--PROCEDIMIENTO PARA ACTUALIZAR UNA COLECCION Y REALIZAR LAS ACTUALIZACIONES CORRESPONDIENTES
+
+create procedure actualizarColeccion (@id nchar(10), @nombre nvarchar(50),@precio decimal,@fecha date, @id_persona nchar(10))
+as
+begin
+	update Coleccion set nombre_coleccion=@nombre, precio=@precio, fecha_inicio=@fecha, id_persona=@id_persona where id=@id;
+	update Persona set tipo='C' where id=@id_persona;
+end;
+
+--Selecciona una persona por id (Lo utilizo para seleccionar el dueño de una coleccion)
+
+create procedure seleccionar_Persona_Por_Id (@id nchar(10)) as
+begin 
+	set nocount on;
+	select * from Persona where id=@id;
+end;
+
+
+-- FIN_COLECCIONES

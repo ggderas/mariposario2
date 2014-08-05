@@ -152,7 +152,10 @@ namespace Mariposario
 
         private void btnColeccionistas_Click(object sender, EventArgs e)
         {
-
+            formularioColecciones f = new formularioColecciones(this.colecciones, this.biologos, this.coleccionistas, this.conexion);
+            f.ShowDialog();
+            this.CargarBaseDeDatos();
+            this.relacionarEntidades();
         }
         #endregion
 

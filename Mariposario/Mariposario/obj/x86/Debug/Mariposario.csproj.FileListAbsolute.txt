@@ -159,3 +159,32 @@ C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\bin\Debu
 C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\bin\Debug\WindowsApplication.pdb
 C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\WindowsApplication.exe
 C:\Users\Carolina\Documents\GitHub\mariposario2\Mariposario\mariposario\obj\x86\Debug\WindowsApplication.pdb
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\bin\Debug\WindowsApplication.exe.config
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\WindowsApplication.exe
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\WindowsApplication.pdb
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.csprojResolveAssemblyReference.cache
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioAgregarColeccion.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioColecciones.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmAgregarPrecio.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmModificarColeccion.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioActualizarMariposa.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioFichaMariposaColeccion.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioFichaMariposaObservacion.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioMariposas.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.formularioNuevaCapturaMariposa.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.FrmActualizar.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmAdminBiologos.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmAdminColeccionistas.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.FrmAgregar_Especie_Genero_FamiliaNatural.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmBiologos.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmColeccionistas.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmConsultas.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.FrmEspecie.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.FrmFamiliaNatural.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.FrmGenero.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmMain.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.frmZonaGeografica.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.Properties.Resources.resources
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\obj\x86\Debug\Mariposario.csproj.GenerateResource.Cache
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\bin\Debug\WindowsApplication.exe
+D:\Alexander\Mis Programas\C#\Bases de datos 2\mariposario2\Mariposario\mariposario\bin\Debug\WindowsApplication.pdb
