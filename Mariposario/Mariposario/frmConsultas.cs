@@ -60,12 +60,14 @@ namespace Mariposario
 
         private void btnConsulta5_Click(object sender, EventArgs e)
         {
-
+            DataTable resultado = this.conexion.consulta("consulta5");
+            this.dgvResultados.DataSource = resultado;
         }
 
         private void btnConsulta6_Click(object sender, EventArgs e)
         {
-
+            DataTable resultado = this.conexion.consulta("consulta6");
+            this.dgvResultados.DataSource = resultado;
         }
 
         private void btnConsulta7_Click(object sender, EventArgs e)
