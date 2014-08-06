@@ -62,6 +62,7 @@ create table Coleccion(
 	id nchar(10) not null,
 	nombre_coleccion nvarchar(50),
 	precio decimal,
+	fecha_inicio date,
 	id_persona nchar(10) UNIQUE,
 	constraint coleccionPK primary key (id),
 	constraint coleccion_personaFK foreign key (id_persona) references Persona(id) on update cascade on delete cascade
